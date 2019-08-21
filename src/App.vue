@@ -1,28 +1,57 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container d-flex flex-column align-items-center">
+      <Header />
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Header from './components/Header'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Header
+  },
+  methods: {
+    onScreenResolutionChange(){
+      if(window.innerWidth <= 750) {
+        this.$store.commit('setIsMobile', true)
+      } else {
+        this.$store.commit('setIsMobile', false)
+      }
+    }
+  },
+  mounted(){
+    this.$nextTick(()=>{
+      window.addEventListener('resize', this.onScreenResolutionChange)
+    })
+  },
+  created(){
+    this.onScreenResolutionChange();
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  .text-responsive {
+    /* font-size: calc(100% + 1vw - 1vmin); */
+    font-size: calc(0.5vw + 1vmin);
+  }
+  
+
+  @media screen and (max-width: 700px) {
+    .text-responsive {
+      /* font-size: calc(100% + 1vw - 1vmin); */
+      font-size: calc(0.75vw + 1vh + 1vmin);
+    }
+  }
 </style>
