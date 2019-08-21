@@ -2,38 +2,7 @@ import Axios from 'axios';
 import moment from 'moment';
 
 const state = {
-  events: [
-    // {
-    //   id: 1,
-    //   title: 'Show Your Support Night',
-    //   start: '2019-08-26',
-    //   end: '2019-08-30',
-    // },
-    // {
-    //   id: 2,
-    //   title: 'Startup Pitch Party',
-    //   start: '2019-08-15',
-    //   end: '2019-08-17',
-    // },
-    // {
-    //   id: 3,
-    //   title: "Helen's Birthday Party",
-    //   start: '2019-08-17',
-    //   end: '2019-08-17',
-    // },
-    // {
-    //   id: 4,
-    //   title: 'Hackathon Day',
-    //   start: '2019-08-17',
-    //   end: '2019-08-17',
-    // },
-    // {
-    //   id: 5,
-    //   title: 'Orientation Day',
-    //   start: '2019-08-15',
-    //   end: '2019-08-24',
-    // }
-  ]
+  events: []
 };
 
 const getters = {
@@ -78,7 +47,7 @@ const getters = {
 
 const actions = {
   async fetchEvents({ commit }){
-    const response = await Axios.get('http://www.mocky.io/v2/5d5d971b330000078057baaf');
+    const response = await Axios.get('https://www.mocky.io/v2/5d5d971b330000078057baaf');
     commit('setEvents', response.data.data)
   }
 };
