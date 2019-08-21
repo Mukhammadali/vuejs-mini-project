@@ -14,16 +14,13 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex';
-import DatePick from 'vue-date-pick';
 import Datepicker from 'vuejs-datepicker';
 import moment from 'moment';
-import 'vue-date-pick/dist/vueDatePick.css';
 import EventsList from '@/components/EventsList';
 
 export default {
   name: "MobileCalendarView",
   components: {
-    DatePick,
     Datepicker,
     EventsList
   },
@@ -51,13 +48,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-  .vdpPeriodControl>button {
-    display: none !important;
-  }
-  .vdp-datepicker > input {
-    background: aqua !important;
-    border: none !important;
-  }
-</style>
