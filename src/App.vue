@@ -32,6 +32,7 @@ export default {
   },
   created(){
     this.onScreenResolutionChange();
+    this.$store.dispatch('fetchEvents');
   }
 }
 </script>
