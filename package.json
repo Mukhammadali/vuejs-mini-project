@@ -17,7 +17,7 @@
     "bootstrap-vue": "^2.0.0-rc.28",
     "core-js": "^2.6.5",
     "es6-promise": "^4.2.8",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "vue": "^2.6.10",
     "vue-router": "^3.1.2",
     "vuejs-datepicker": "^1.6.2",
